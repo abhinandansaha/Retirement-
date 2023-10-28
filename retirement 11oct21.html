@@ -1,0 +1,242 @@
+
+<html>
+<head>
+   		<title> Retirement Planning </title>
+<body>
+<marquee behavior="blink" direction="left"><b><font color ="BLack" face=Arial">The below calculator is designed / coded with ACADEMIC INTENT only - </b></font><br></marquee>
+
+<body>
+<HR>
+4 Feedback : Do text me over 9831043416 ( Ver - 11oct21 - 1.0 )
+<hr>
+
+<script>
+function goal() 
+{
+var ocage = document.getElementById("page").value;
+var ocyr = document.getElementById("cyr").value;
+var ryr = document.getElementById("rage").value - document.getElementById("page").value - (- document.getElementById("cyr").value);
+var ocexp = document.getElementById("pvexp").value;
+var orage = document.getElementById("rage").value;
+var oexitage = document.getElementById("exitage").value;
+var oyrexit = ryr - (- (oexitage - orage )) ;
+var accinf1 = document.getElementById("accinf").value;
+var invhtilret = orage-ocage ;
+var disinf1 = document.getElementById("disinf").value;
+var invhfrmret = oexitage - orage ;
+document.getElementById("ocage1").value = ocage;
+
+document.getElementById("ocyr1").value = ocyr;
+
+document.getElementById("ryr1").value = ryr;
+
+document.getElementById("ocexp1").value = ocexp;
+
+document.getElementById("orage1").value = orage;
+document.getElementById("oexitage1").value = oexitage;
+document.getElementById("oyrexit1").value = oyrexit;
+document.getElementById("oexpatret").value = (ocexp*(Math.pow((1+(accinf1)/100),invhtilret))).toFixed(0);
+
+
+document.getElementById("oexpatexit").value = (document.getElementById("oexpatret").value*(Math.pow((1+(disinf1)/100),invhfrmret))).toFixed(0);
+
+document.getElementById("invhtilret1").value = invhtilret;
+document.getElementById("invhfrmret1").value = invhfrmret;
+
+ 
+var ofgdis = document.getElementById("fgdis").value ;
+var ofgacc = document.getElementById("fgacc").value ;
+var mfgacc = ((Math.pow((1-(-ofgacc/100)),(1/12)))-1) ;
+
+var mfgdis = (Math.pow((1-(-ofgdis/100)),(1/12)))-1 ;
+var mdisinf  = (Math.pow((1-(-disinf1/100)),(1/12)))-1 ;
+var afgdisinf = (1-(-mdisinf))/(1-(-mfgdis)) ;
+var locorpus1 = (document.getElementById("locorpus").value)/100;
+
+
+var corworopp = ((1-(Math.pow(afgdisinf,(invhfrmret*12))))*(1-(-mfgdis))*(document.getElementById("oexpatret").value/(mfgdis-mdisinf))).toFixed(0); 
+
+var pvaddcorpus = ((corworopp*locorpus1)/(Math.pow((1+ofgdis/100),invhfrmret))).toFixed(0);
+
+document.getElementById("pvaddcorpus1").value = pvaddcorpus ;
+
+document.getElementById("oaccinf1").value = corworopp;
+
+document.getElementById("totcorpus").value = corworopp -(- pvaddcorpus) ;
+document.getElementById("locorpusabs").value = (document.getElementById("totcorpus").value*locorpus1).toFixed(0);
+
+document.getElementById("sipreq").value = (document.getElementById("totcorpus").value/((Math.pow((1+(mfgacc)),invhtilret*12))-1)/(1+(mfgacc))*(mfgacc)).toFixed(0);
+
+}
+
+
+ //*(corworopp/((Math.pow((1+(mfgacc)/100),invhtilret*12))-1)/(1+(mfgacc)/100)*(mfgacc/100)).toFixed(2)
+</script>
+
+<style>
+.split {
+  height: 100%;
+  width: 50%;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  overflow-x: hidden;
+  padding-top: 50px;
+}
+
+/* Control the left side */
+.left {
+  left: 0;
+  background-color: #111;
+}
+
+/* Control the right side */
+.right {
+  right: 0;
+  background-color: aqua marine;
+}
+</style>
+</head>
+<canvas id="myCanvas" width="550" height="450" > </canvas>
+
+<script>
+
+var c = document.getElementById("myCanvas");
+var ctx = c.getContext("2d");
+var ctx1 = c.getContext("2d");
+var ctx2 = c.getContext("2d");
+
+ctx.beginPath(); //*right slant
+ctx.moveTo(300, 50);
+ctx.lineTo(500, 350);
+ctx.stroke();
+
+ctx1.beginPath(); //*left slant
+ctx1.moveTo(100, 350);
+ctx1.lineTo(300,50);
+ctx1.stroke();
+
+ctx1.beginPath(); //* bottom horizontal 
+ctx1.moveTo(100, 350);
+ctx1.lineTo(500, 350);
+ctx1.stroke();
+
+ctx1.beginPath(); //* right vertical
+ctx1.moveTo(500, 300);
+ctx1.lineTo(500, 400);
+ctx1.stroke();
+
+ctx1.beginPath(); //* left vertical
+ctx1.moveTo(100, 250);
+ctx1.lineTo(100, 400);
+ctx1.stroke();
+
+ctx1.beginPath(); //* middle vertical
+ctx1.moveTo(300, 0);
+ctx1.lineTo(300, 400);
+ctx1.stroke();
+ctx1.beginPath(); //* middle vertical LEFT ARROW 
+ctx1.moveTo(290, 10);
+ctx1.lineTo(300, 0);
+ctx1.stroke();
+ctx1.beginPath(); //* middle vertical RIGHT ARROW 
+ctx1.moveTo(310, 10);
+ctx1.lineTo(300, 0);
+ctx1.stroke();
+ctx1.beginPath(); //* left left small arrow 
+ctx1.moveTo(90, 380);
+ctx1.lineTo(100, 400);
+ctx1.stroke();
+
+ctx1.beginPath(); //* left right  small arrow 
+ctx1.moveTo(110, 380);
+ctx1.lineTo(100, 400);
+ctx1.stroke();
+
+ctx1.beginPath(); //* right left small arrow 
+ctx1.moveTo(490, 380);
+ctx1.lineTo(500, 400);
+ctx1.stroke();
+
+ctx1.beginPath(); //* right right small arrow 
+ctx1.moveTo(510, 380);
+ctx1.lineTo(500, 400);
+ctx1.stroke();
+
+</script> 
+<br>
+-----------------<B>||--------------------------------------|-------------------------------------|-</B>-------<br>
+----------------<B>-||-- A C C U M U L A T I O N -||-- D I S T R I B U T I O N ---||</B> -------<BR><br>
+
+<table>
+<tr>
+<td>current age:  &nbsp;&nbsp;<b><output type="number" id="ocage1" font size="10" > </b> ||  </td>
+<td>retirement age: &nbsp;&nbsp; <b><output type="number" id="orage1" font size="10" > </b> ||</td>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Age (exit): <b><output type="number" id="oexitage1" font size="10" >  </b> </td>
+</tr>
+
+<tr>
+<td>current year : &nbsp;&nbsp; <b><output type="number" id="ocyr1" font size="10" ></b> ||  </td> 
+<td>retirement year :  &nbsp;&nbsp;<b><output type="number" id="ryr1" font size="10" > </b>        ||</td>
+<td> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Year (exit):<b><output type="number" id="oyrexit1" font size="10" > </b> </td>
+</tr>
+
+<tr>
+<td>current Exp: &nbsp;&nbsp;<b><output type="number" id="ocexp1" font size="10" > </b>        || &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+<td>@retiremnt Exp: <b><output type="number" id="oexpatret" font size="12" > </b> || </td>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;last month Expense (exit): <b><output type="number" id="oexpatexit" font size="14" > </b> </td>
+</tr>
+
+<tr>
+<td>SIP REQ : <b><output type="number" id="sipreq" font size="10" > </b>||</td>
+<td>CORPUS REQ : <b><output type="number" id="totcorpus" font size="10" > </b>||&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+<td> LEFT OVER CORPUS : <b><output type="number" id="locorpusabs" font size="10" > </b></td>
+</tr>
+
+</table>	
+<div class="split right">
+  <div class="">
+   
+    <h2>Share Inputs &nbsp;  </h2>
+<table>
+<tr><td>
+ Current Monthly Expense  --</td><td> <input type="text" id="pvexp" value="30000" size="5"> &nbsp;</td>
+ <td>Current Age  --</td><td> <input type="text" id="page" value="34" size="1"><td> &nbsp; Current year  --</td><td> <input type="text" id="cyr" value="2021" size="1"></td></tr>
+<tr></tr>
+<tr><td>Inflation % (Acc. Stage) --</td><td> <input type="text" id="accinf" value="5" size="1"> &nbsp;</td>
+ <td>Inflation % (Dist. Stage)  --</td><td> <input type="text" id="disinf" value="5.5" size="1"><td> &nbsp; </td></tr>
+<tr></tr>
+<tr><td> Fund Growth % (Acc.Stage)</td><td> <input type="text" id="fgacc" value="11" size="1"> &nbsp;</td>
+ <td> Growth % (Dist.Stage)  --</td><td> <input type="text" id="fgdis" value="10" size="1"><td> &nbsp; </td></tr>
+
+<tr></tr></table> <br>
+<table>
+<tr><td> Retirement Age  </td><td> <input type="text" id="rage" value="55" size="1"> &nbsp;&nbsp;</td>
+<td> Life expectancy </td><td> <input type="text" id="exitage" value="90" size="1"> &nbsp;</td>
+<td> <b>Left over corpus %  </b> </td><td> <input type="text" id="locorpus" value="100" size="1"> &nbsp;</td></tr>
+
+ </table>
+<br><br><br>
+
+<button onClick="goal()"><b>  Please Click to Plan  </b> </button>
+<br><br>
+Length of Accumulation & Distribution Phase = <br>Life Expectancy - Age when one starts Retirement Planning + <b>Difference in age between spouses</b> </td></tr>
+<br>
+<table> <tr><td>
+Accumulation Phase :&nbsp;&nbsp;<b><output type="number" id="invhtilret1" font size="10" ><b></td></tr>
+<br>
+<tr><td>
+Distribution Phase :&nbsp;&nbsp;<b><output type="number" id="invhfrmret1" font size="10" > </td></tr>
+<br><br><tr><td>
+
+<tr><td> with out return of corpus : <b><output type="number" id="oaccinf1" font size="10" > </b> </td></tr>
+<br>
+<tr><td> Diff. btn with & w/out ROPP :<b> <output type="number" id="pvaddcorpus1" font size="10" >  </b> </td></tr>
+</table>
+  </div>
+</div>
+
+
+</body>
+</html>
+
